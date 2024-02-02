@@ -1,0 +1,22 @@
+#get-repos {
+    all: unset;
+    outline: revert;
+    box-sizing: border-box;
+    background-color: var(--neutral-5);
+    color: var(--neutral-1);
+    border-radius: 5px;
+    padding-inline: 10px;
+    padding-block: 2px;
+    border: 1px solid var(--neutral-2);
+    font-size: 1rem;
+}
+
+#get-repos:hover {
+    background-color: var(--accent-4);
+}
+
+#get-repos:active {
+    background-color: var(--primary-3);
+}
+
+

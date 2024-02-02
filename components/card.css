@@ -1,0 +1,78 @@
+/* heading + stars */
+
+.heading-stars {
+    display: flex;
+    align-items:end;
+    height: 60px;
+    margin-bottom: 20px;
+    background-color: var(--neutral-5);
+    border: 1px solid var(--neutral-5);
+    padding-inline: 10px;
+}
+
+.info-name {
+    flex-grow: 1;
+    margin-block: 0;
+}
+
+.star-icon-info {
+    /* flex-basis: 50%; */
+    display: flex;
+    align-items: end;
+}
+
+.star {
+    flex-basis: 10%;
+}
+
+.info-stars {
+    flex-basis: 90%;
+    margin-block: 0;
+}
+
+/* avatar + nickname */
+
+.avatar-nickname {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 120px 1fr;
+}
+
+.desc-nickname >* {
+    margin-block: 0;
+}
+
+.desc-nickname {
+    display: flex;
+    gap: 20px;
+}
+
+/* description, languages, contributors, updated */
+
+.div-cont {
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+    grid-template-columns: 120px 1fr;
+}
+
+
+.div-cont > * {
+    margin-block: 0;
+}
+
+.go-back-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.go-back {    
+    background-color: var(--neutral-5);
+    border: 1px solid var(--neutral-5);
+    padding-block: 5px;
+    padding-inline: 10px;
+    border-radius: 15px;
+}
+
