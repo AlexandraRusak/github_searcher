@@ -1,10 +1,10 @@
 import { renderPage } from "./renderPage.js";
 import { loadForm } from "./loadForm.js";
+import {baseURL} from "./parseURL.js"
 
 function paginate(userInput, pageIndex, data) {
 
     let currentPage
-    const hostname = "localhost:5175"
 
     const setCurrent = (page) => {
         if (currentPage) {
@@ -42,7 +42,7 @@ function paginate(userInput, pageIndex, data) {
     if (leftLimit >= 3) {
     const backToStart = document.createElement("a");
     backToStart.classList.add("back-to-start");
-    backToStart.href = `http://${hostname}/?q=${userInput}&p=1`
+    backToStart.href = `${baseURL}?q=${userInput}&p=1`
     backToStart.textContent = "1";
     backToStart.addEventListener("click", (event) => {
         event.preventDefault();
@@ -66,7 +66,7 @@ function paginate(userInput, pageIndex, data) {
         pageNumber.textContent = i;
         pageNumber.setAttribute("data-page-index", `${i}`)
         pageNumber.setAttribute("aria-label", "Page " + `${i}`);
-        pageNumber.href = `http://${hostname}/?q=${userInput}&p=${i}`;
+        pageNumber.href = `${baseURL}?q=${userInput}&p=${i}`;
         if (i === pageIndex) {
             setCurrent(pageNumber)
         }

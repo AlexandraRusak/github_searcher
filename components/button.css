@@ -9,6 +9,7 @@
     padding-block: 2px;
     border: 1px solid var(--neutral-2);
     font-size: 1rem;
+    cursor: pointer;
 }
 
 #get-repos:hover {

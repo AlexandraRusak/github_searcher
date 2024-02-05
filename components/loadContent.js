@@ -1,5 +1,6 @@
 import { loadCard } from "./loadCard.js"
 import { loadMessage } from "./loadMessage.js"
+import { baseURL} from "./parseURL.js"
 
 function loadContent(data, key) {
 
@@ -20,8 +21,8 @@ function loadContent(data, key) {
         const repoAnchor = document.createElement("a");
         repoAnchor.classList.add("more-info");
 
-        const hostname = "localhost:5175"
-        repoAnchor.href = `http://${hostname}/?r=${encodeURIComponent(repo.name)}&o=${encodeURIComponent(repo.owner.login)}`;
+        // const hostname = "localhost:5175"
+        repoAnchor.href = `${baseURL}?r=${encodeURIComponent(repo.name)}&o=${encodeURIComponent(repo.owner.login)}`;
 
         repoAnchor.setAttribute("target", "_blank")
         repoAnchor.setAttribute("data-repo-name", `${repo.name}`);

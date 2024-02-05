@@ -2,7 +2,11 @@ import { renderPage } from "./renderPage.js";
 import { loadForm } from "./loadForm.js";
 import { loadCard } from "./loadCard.js"
 
-    function parseURL(url) {
+const baseURL = window.location.href
+    
+
+function parseURL(url) {
+
     
         const searchParams = new URLSearchParams(url);
 
@@ -28,4 +32,4 @@ import { loadCard } from "./loadCard.js"
 
     }
 
-export { parseURL }
+export { parseURL, baseURL }
