@@ -36,20 +36,20 @@ function paginate(userInput, pageIndex, data) {
 
     const paginationNav = document.createElement("nav");
 
-    document.querySelector("#paginationRoot").appendChild(paginationNav);
+    document.querySelector("#pagination-root").appendChild(paginationNav);
     paginationNav.appendChild(paginationUl);
 
     if (leftLimit >= 3) {
     const backToStart = document.createElement("a");
     backToStart.classList.add("back-to-start");
-    backToStart.href = `${baseURL}?q=${userInput}&p=1`
+    backToStart.href = `${baseURL}/?q=${userInput}&p=1`
     backToStart.textContent = "1";
     backToStart.addEventListener("click", (event) => {
         event.preventDefault();
         history.pushState(null, null, backToStart.href)
-        document.querySelector("#root").innerHTML = "";
-        document.querySelector("#paginationRoot").innerHTML = "";
-        loadForm()
+        document.querySelector("#content-root").innerHTML = "";
+        document.querySelector("#pagination-root").innerHTML = "";
+        // loadForm()
         renderPage(userInput, 1)
     })
 
@@ -66,18 +66,18 @@ function paginate(userInput, pageIndex, data) {
         pageNumber.textContent = i;
         pageNumber.setAttribute("data-page-index", `${i}`)
         pageNumber.setAttribute("aria-label", "Page " + `${i}`);
-        pageNumber.href = `${baseURL}?q=${userInput}&p=${i}`;
+        pageNumber.href = `${baseURL}/?q=${userInput}&p=${i}`;
         if (i === pageIndex) {
             setCurrent(pageNumber)
         }
         pageNumber.addEventListener("click", (event) => {
             event.preventDefault()
             history.pushState(null, null, pageNumber.href)
-            document.querySelector("#root").innerHTML = "";
-            document.querySelector("#paginationRoot").innerHTML = "";
+            document.querySelector("#content-root").innerHTML = "";
+            document.querySelector("#pagination-root").innerHTML = "";
             setCurrent(pageNumber)
             let pageAttribute = Number(pageNumber.getAttribute("data-page-index"))
-            loadForm()
+            // loadForm()
             renderPage(userInput, pageAttribute)
         })
 

@@ -36,11 +36,11 @@ function loadForm() {
         event.preventDefault();
 
         const repoName = document.querySelector("#repo-name")
-        document.querySelector("#root").innerHTML = "";
-        document.querySelector("#paginationRoot").innerHTML = "";
+        document.querySelector("#content-root").innerHTML = "";
+        document.querySelector("#pagination-root").innerHTML = "";
 
         history.pushState(null, null, `./?q=${encodeURIComponent(repoName.value)}&p=1`)
-        loadForm()
+        // loadForm()
         renderPage(repoName.value, 1)
 
     })

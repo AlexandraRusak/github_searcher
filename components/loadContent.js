@@ -9,7 +9,7 @@ function loadContent(data, key) {
     const message = document.createElement("p");
     message.classList.add("message");
     message.textContent = loadMessage(key);
-    document.querySelector("#root").appendChild(message);
+    document.querySelector("#content-root").appendChild(message);
 
     if (repos.length === 0) {
         message.textContent = loadMessage("nothing")
@@ -22,7 +22,7 @@ function loadContent(data, key) {
         repoAnchor.classList.add("more-info");
 
         // const hostname = "localhost:5175"
-        repoAnchor.href = `${baseURL}?r=${encodeURIComponent(repo.name)}&o=${encodeURIComponent(repo.owner.login)}`;
+        repoAnchor.href = `${baseURL}/?r=${encodeURIComponent(repo.name)}&o=${encodeURIComponent(repo.owner.login)}`;
 
         repoAnchor.setAttribute("target", "_blank")
         repoAnchor.setAttribute("data-repo-name", `${repo.name}`);
@@ -33,7 +33,8 @@ function loadContent(data, key) {
             event.preventDefault()
             history.pushState(null, null, repoAnchor.href)
             document.querySelector("#root").innerHTML = "";
-            document.querySelector("#paginationRoot").innerHTML = "";
+            document.querySelector("#content-root").innerHTML = "";
+            document.querySelector("#pagination-root").innerHTML = "";
             loadCard()
         })
 
@@ -80,7 +81,7 @@ function loadContent(data, key) {
 
         const list = document.createElement("ul");
         list.id = "repos-list";
-        document.querySelector("#root").appendChild(list);
+        document.querySelector("#content-root").appendChild(list);
         list.appendChild(repoLi);
         repoLi.appendChild(repoAnchor);
         repoLi.appendChild(repoOwnerDiv)

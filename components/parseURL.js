@@ -2,7 +2,7 @@ import { renderPage } from "./renderPage.js";
 import { loadForm } from "./loadForm.js";
 import { loadCard } from "./loadCard.js"
 
-const baseURL = window.location.href
+const baseURL = window.location.origin
     
 
 function parseURL(url) {

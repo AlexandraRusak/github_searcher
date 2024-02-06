@@ -14,7 +14,7 @@ parseURL(window.location.search)
 
 window.addEventListener("popstate", () => {
   document.querySelector("#root").innerHTML ="";
-  document.querySelector("#paginationRoot").innerHTML = "";
+  document.querySelector("#pagination-root").innerHTML = "";
   parseURL(window.location.search)
 })
 
